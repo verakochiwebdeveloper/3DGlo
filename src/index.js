@@ -1,6 +1,3 @@
-// index.js
-const messageOne = require('./modules/one'); // Подключаем модуль one.js
-const messageTwo = require('./modules/two'); // Подключаем модуль two.js
+import timer from './modules/timer';
 
-console.log(messageOne);
-console.log(messageTwo);
+timer('28 june 2024')
