@@ -1,6 +1,5 @@
-// index.js
-const messageOne = require('./modules/one'); // Подключаем модуль one.js
-const messageTwo = require('./modules/two'); // Подключаем модуль two.js
+import menu from './modules/menu';
+import modal from './modules/modal';
 
-console.log(messageOne);
-console.log(messageTwo);
+menu()
+modal()
