@@ -1,19 +1,19 @@
 const menu = () => {
-  const menuBtn = document.querySelector(".menu");
   const menu = document.querySelector("menu");
-  const closeBtn = menu.querySelector(".clocse-btn");
-  const menuItems = menu.querySelector("ul>li>a");
 
-  const handlmenu = () => {
-    menu.classList.toggle("menu-active");
+  const handleMenu = (event) => {
+    if (event.target.classList.contains("menu") || event.target.classList.contains("close-btn")) {
+      menu.classList.toggle("menu-active");
+    } else if (event.target.tagName === "A") {
+      menu.classList.remove("menu-active");
+    }
   };
 
-  menuBtn.addEventListener("click", handlmenu);
+  document.addEventListener("click", handleMenu);
 
-  closeBtn.addEventListener("click", handlmenu);
-
-  menuItems.forEach((menuItem) => {
-    menuItem[i].addEventListener("click", handlmenu);
+  const menuBtn = document.querySelector(".menu");
+  menuBtn.addEventListener("click", (event) => {
+    event.stopPropagation();
   });
 };
 
