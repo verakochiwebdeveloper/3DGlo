@@ -1,6 +1,6 @@
 import menu from './modules/menu';
 import modal from './modules/modal';
-import modal from './modules/calculator';
+import calculator from './modules/calculator';
 
 menu()
 modal()

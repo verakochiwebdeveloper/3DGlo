@@ -16,7 +16,17 @@
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/menu */ \"./modules/menu.js\");\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/modal */ \"./modules/modal.js\");\n\r\n\r\n\r\n(0,_modules_menu__WEBPACK_IMPORTED_MODULE_0__[\"default\"])()\r\n;(0,_modules_modal__WEBPACK_IMPORTED_MODULE_1__[\"default\"])()\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/menu */ \"./modules/menu.js\");\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/modal */ \"./modules/modal.js\");\n/* harmony import */ var _modules_calculator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/calculator */ \"./modules/calculator.js\");\n/* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/tabs */ \"./modules/tabs.js\");\n\r\n\r\n\r\n\r\n\r\n(0,_modules_menu__WEBPACK_IMPORTED_MODULE_0__[\"default\"])()\r\n;(0,_modules_modal__WEBPACK_IMPORTED_MODULE_1__[\"default\"])()\r\n;(0,_modules_calculator__WEBPACK_IMPORTED_MODULE_2__[\"default\"])()\r\n;(0,_modules_tabs__WEBPACK_IMPORTED_MODULE_3__[\"default\"])()\n\n//# sourceURL=webpack:///./index.js?");
+
+/***/ }),
+
+/***/ "./modules/calculator.js":
+/*!*******************************!*\
+  !*** ./modules/calculator.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst calculator = () => {\r\n    document.querySelectorAll('.calc-item').forEach(item => {\r\n        if (item.classList.contains('calc-square') || item.classList.contains('calc-count') || item.classList.contains('calc-day')) {\r\n            item.addEventListener('input', function() {\r\n                this.value = this.value.replace(/\\D/g, '');\r\n            });\r\n        }\r\n    });\r\n    document.querySelectorAll('input[type=\"text\"][placeholder=\"Ваше сообщение\"]').forEach(input => {\r\n        input.addEventListener('input', function() {\r\n            this.value = this.value.replace(/[^а-яА-Я\\s-]/g, '');\r\n        });\r\n    });\r\n    \r\n    document.querySelectorAll('input[type=\"email\"]').forEach(input => {\r\n        input.addEventListener('input', function() {\r\n            this.value = this.value.replace(/[^a-zA-Z0-9@_.!~*'\"]/g, '');\r\n        });\r\n    });\r\n    \r\n    document.querySelectorAll('input[type=\"tel\"]').forEach(input => {\r\n        input.addEventListener('input', function() {\r\n            this.value = this.value.replace(/[^\\d()-]/g, '');\r\n        });\r\n    });\r\n        \r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (calculator);\n\n//# sourceURL=webpack:///./modules/calculator.js?");
 
 /***/ }),
 
@@ -37,6 +47,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst modal = () => { \r\n    const modal = document.querySelector('.popup'); \r\n    const buttons = document.querySelectorAll('.popup-btn'); \r\n    const popupCloseBtn = modal.querySelector('.popup-close'); \r\n\r\n    buttons.forEach(btn => { \r\n        btn.addEventListener('click', () => { \r\n            modal.style.display = 'block'; \r\n        }); \r\n    }); \r\n\r\n    popupCloseBtn.addEventListener('click', () => { \r\n        modal.style.display = 'none'; \r\n    }); \r\n\r\n        const showModal = () => {\r\n            modal.classList.add('show');\r\n        };\r\n\r\n        const hideModal = () => {\r\n            modal.classList.remove('show');\r\n        };\r\n\r\n        const checkScreenWidth = () => {\r\n            if (window.innerWidth >= 768) {\r\n                showModal();\r\n            }\r\n        };\r\n\r\n        window.addEventListener('load', checkScreenWidth);\r\n\r\n        \r\n        buttons.forEach(btn => {\r\n            btn.addEventListener('click', () => {\r\n                showModal();\r\n            });\r\n        });\r\n\r\n        popupCloseBtn.addEventListener('click', () => {\r\n            hideModal();\r\n        });\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modal);\r\n\n\n//# sourceURL=webpack:///./modules/modal.js?");
+
+/***/ }),
+
+/***/ "./modules/tabs.js":
+/*!*************************!*\
+  !*** ./modules/tabs.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst tabs = () => {\r\n const tabsPanel = document.querySelectorAll('.service-header')\r\n const tabsContent = document.querySelectorAll('.service-tab')\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (tabs);\n\n//# sourceURL=webpack:///./modules/tabs.js?");
 
 /***/ })
 
