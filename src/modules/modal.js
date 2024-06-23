@@ -36,9 +36,14 @@ const modal = () => {
             });
         });
 
-        popupCloseBtn.addEventListener('click', () => {
-            hideModal();
-        });
+        
+
+        modal.addEventListener('click', (event)=> {
+            if (!event.target.closest('.popup-content') || event.targert.classList.contains('.popup-close')) {
+                hideModal();
+            }
+
+        })
 };
 
 export default modal;
