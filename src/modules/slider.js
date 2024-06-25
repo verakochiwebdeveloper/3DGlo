@@ -7,6 +7,20 @@ const slider = () => {
   let currentSlide = 0;
   let interval; 
 
+  slides.forEach((slide, index) => {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    dot.setAttribute('data-slide', index);
+    sliderBlock.appendChild(dot);
+
+    if(event.target.matches('.dot')) {
+      currentSlide = parseInt(event.target.getAttribute('data-slide'));
+    }
+    
+  });
+
+  
+
   const prevSlide = (elems, index, strClass) => {
     elems[index].classList.remove(strClass)
   };
