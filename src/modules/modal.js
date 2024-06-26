@@ -1,3 +1,6 @@
+import animate from './animation.js';
+
+
 const modal = () => { 
     const modal = document.querySelector('.popup'); 
     const buttons = document.querySelectorAll('.popup-btn'); 
@@ -33,9 +36,18 @@ const modal = () => {
         buttons.forEach(btn => {
             btn.addEventListener('click', () => {
                 showModal();
+                animate({
+                    duration: 1000,
+                    timing(timeFraction) {
+                        return timeFraction;
+                    },
+                    draw(progress) {
+                        elem.style.width = progress * 100 + '%';
+                    },
+                    elem: modal // Передаем modal в качестве элемента для анимации ширины
+                });
             });
         });
-
         popupCloseBtn.addEventListener('click', () => {
             hideModal();
         });
