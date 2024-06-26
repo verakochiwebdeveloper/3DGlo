@@ -16,14 +16,14 @@ const calc = (price = 100) => {
 
         if(calcCount.value > 1) {
             calcCountValue += +calcCountValue / 10
-        }
+        };
 
         if( calcDay.value && calcDay.value < 5) {
-            calcDayValue = 2
+            calcDayValue = 2;
 
-        } else f(calcDay.value && calcDay.value < 10) {
-            calcDayValue = 1.5
-        } 
+        } else if (calcDay.value && calcDay.value < 10) {
+            calcDayValue = 1.5;
+        } ;
 
         if(calcType.value && calcSquare.value) {
             totalValue = price * calcTypeValue * calcSquareValue * calcCountValue * calcDayValue
@@ -31,7 +31,7 @@ const calc = (price = 100) => {
             totalValue = 0
         }
 
-        total.textContent = totalValue
+        total.textContent = totalValue;
     }
 
     calcBlock.addEventListener('input', (event) => {
