@@ -14,3 +14,5 @@ const animate = ({ duration, timing, draw, elem }) => {
         }
     });
 };
+
+export default animate

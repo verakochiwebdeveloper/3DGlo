@@ -1,4 +1,4 @@
-import animate from './animation.js';
+import animate from './helper.js';
 
 
 const modal = () => { 
